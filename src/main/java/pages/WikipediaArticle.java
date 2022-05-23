@@ -1,4 +1,4 @@
-package starter.search;
+package pages;
 
 import net.serenitybdd.screenplay.targets.Target;
 
