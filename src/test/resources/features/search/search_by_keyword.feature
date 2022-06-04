@@ -1,18 +1,17 @@
-Feature: Search by keyword
-
-#  Scenario: Searching for a term
-#    Given Sergey is researching things on the internet
-#    When he looks up "Cucumber"
-#    Then he should see information about "Cucumber"
+Feature: Login Swag Labs
 
   Scenario Outline: Test the login with empty password
     Given Alex wants to sign in to Swag Labs
     When he enters user name as <username>
     And he enters the password as <password>
     And he clicks on login
-#    Then he is able to see the corresponding error message
+    Then he is shown an error message as <error_msg>
 
     Examples:
-      | username      | password |
-      | standard_user | ""       |
+      | username          | password       | error_msg                                             |
+      | "standard_user"   | ""             | "Epic sadface: Password is required"                  |
+      | "locked_out_user" | "secret_sauce" | "Epic sadface: Sorry, this user has been locked out." |
+      | "problem_user"    | "secret_sauce" | "Epic sadface: Sorry, this user has been locked out." |
+
+
 

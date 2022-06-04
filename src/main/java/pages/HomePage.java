@@ -23,4 +23,8 @@ public class HomePage extends PageObject {
     @AndroidBy(id="notDefined")
     public static WebElementFacade LOGIN_BTN;
 
+    @FindBy(xpath="//h3[@data-test='error']")
+    @AndroidBy(id="notDefined")
+    public static WebElementFacade ERROR_MSG;
+
 }
