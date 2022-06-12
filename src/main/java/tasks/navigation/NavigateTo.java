@@ -4,6 +4,8 @@ import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Open;
 import pages.HomePage;
+import pages.base.BasePage;
+import questions.EnvironmentInfo;
 
 public class NavigateTo {
     public static Performable theWikipediaHomePage() {
@@ -11,9 +13,16 @@ public class NavigateTo {
                 Open.browserOn().the(WikipediaHomePage.class));
     }
 
-    public static Performable theSwagLabsHomePage()
+
+    public static Performable navigateToThePage(BasePage desiredPage)
     {
-        return Task.where("{0} opens the Swag Labs Home Page",
-               Open.browserOn().the(HomePage.class));
+        if(EnvironmentInfo.getPlatformName().toLowerCase().contains("web"))
+        {
+            return desiredPage.navigateToPageOnWeb();
+        }
+        else
+        {
+            return desiredPage.navigateToPageOnDevice();
+        }
     }
 }

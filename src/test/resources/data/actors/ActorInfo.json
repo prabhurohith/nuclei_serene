@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Jack",
+    "username": "standard_user",
+    "password":"",
+    "description": "No password user"
+  },
+  {
+    "name": "Jill",
+    "username": "locked_out_user",
+    "password":"secret_sauce",
+    "description": "Locked User"
+  },
+  {
+    "name": "Bob",
+    "username": "problem_user",
+    "password":"secret_sauce",
+    "description": "Problematic User"
+  },
+  {
+    "name": "Marley",
+    "username": "standard_user",
+    "password":"secret_sauce",
+    "description": "Valid User"
+  }
+]

@@ -9,12 +9,13 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.ensure.Ensure;
 import pages.HomePage;
+import pages.base.AppPages;
 import tasks.navigation.NavigateTo;
 
 public class HomePageSteps {
     @Given("{actor} wants to sign in to Swag Labs")
     public void alexWantsToSignInToSwagLabs(Actor theActor) {
-        theActor.attemptsTo(NavigateTo.theSwagLabsHomePage());
+        theActor.attemptsTo(NavigateTo.navigateToThePage(AppPages.HOME_PAGE.getPage()));
     }
 
 
