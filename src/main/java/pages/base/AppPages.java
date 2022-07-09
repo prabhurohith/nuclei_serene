@@ -1,13 +1,12 @@
 package pages.base;
 
-import org.jsoup.Connection;
-import pages.HomePage;
+import pages.app.LoginPage;
 
 
 public enum AppPages {
     HOME_PAGE {
         public BasePage getPage() {
-            return new HomePage();
+            return new LoginPage();
         }
     };
     public abstract BasePage getPage();

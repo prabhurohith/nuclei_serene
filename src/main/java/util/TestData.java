@@ -17,7 +17,7 @@ public class TestData {
                     new File("./src/test/resources/data/actors/ActorInfo.json"),
                     new TypeReference<List<ActorInfo>>(){});
             ActorInfo desiredActor = actorsData.stream().filter(actorInfo -> actorInfo.getName().contains("Jack")).findFirst().get();
-            desiredActor.getDescription();
+            System.out.println(desiredActor.getDescription());
 
         } catch (IOException e) {
             e.printStackTrace();

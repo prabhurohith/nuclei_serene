@@ -17,7 +17,7 @@ public class DataHandler {
                     new File("./src/test/resources/data/actors/ActorInfo.json"),
                     new TypeReference<List<ActorInfo>>() {
                     });
-            return actorsData.stream().filter(actorInfo -> actorInfo.getName().contains("Jack")).findFirst().get();
+            return actorsData.stream().filter(actorInfo -> actorInfo.getName().equalsIgnoreCase(actorName)).findFirst().get();
 
         } catch (IOException e) {
             e.printStackTrace();
