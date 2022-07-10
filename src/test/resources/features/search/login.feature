@@ -13,16 +13,22 @@ Feature: Login Swag Labs
 #      | "locked_out_user" | "secret_sauce" | "Epic sadface: Sorry, this user has been locked out." |
 #      | "problem_user"    | "secret_sauce" | "Epic sadface: Sorry, this user has been locked out." |
 
-  # Using this doesnt launch the browser
+
   Scenario Outline: Test the login with empty password
     Given <user> logs into the saucelabs app
     Then he is shown an error message as <error_msg>
 
     Examples:
-      | user | error_msg                                             |
-      | Jack | "Epic sadface: Password is required"                  |
-      | Jill | "Epic sadface: Sorry, this user has been locked out." |
-      | Bob  | "Epic sadface: Sorry, this user has been locked out." |
+      | user | error_msg                            |
+      | Jack | "Epic sadface: Password is required" |
+#      | Jill | "Epic sadface: Sorry, this user has been locked out." |
+#      | Bob  | "Epic sadface: Sorry, this user has been locked out." |
+
+#  @current
+  Scenario: Check if the login page is displayed when user navigates to login
+    Given Jack goes to the saucelabs 'login' page
+    Then he should be able to see that the 'login' page is loaded
+
 
 
 

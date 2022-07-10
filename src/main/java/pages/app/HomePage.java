@@ -12,7 +12,7 @@ import pages.base.BasePage;
 import java.util.List;
 
 @DefaultUrl("page:login.page")
-public class LoginPage extends BasePage {
+public class HomePage extends BasePage {
 
     @FindBy(id = "user-name")
     @AndroidBy(id = "notDefined")
@@ -30,16 +30,11 @@ public class LoginPage extends BasePage {
     @AndroidBy(id = "notDefined")
     public static WebElementFacade ERROR_MSG;
 
-/*
-    public static final Target ERROR_MSG = Target.the("Error Msg")
-           .located(By.xpath("//h3[@data-test='error'"));
-*/
-
 
     @Override
     public Performable navigateToPageOnWeb() {
         return Task.where("{0} opens the Swag Labs Home Page",
-                Open.browserOn().the(LoginPage.class));
+                Open.browserOn().the(HomePage.class));
     }
 
     @Override
@@ -49,7 +44,7 @@ public class LoginPage extends BasePage {
 
     @Override
     public BasePage registerPageElements() {
-        super.pageElements.addAll(List.of(USERNAME_INPUT, PWD_INPUT, LOGIN_BTN));
+        super.pageElements.addAll(List.of(USERNAME_INPUT,PWD_INPUT,LOGIN_BTN,ERROR_MSG));
         return this;
     }
 }
