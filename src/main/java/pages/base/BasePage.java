@@ -13,6 +13,7 @@ public abstract class BasePage extends PageObject {
 
     // Page load elements
     protected  List<WebElementFacade> pageElements = new ArrayList<>();
+    // Component Consequences
 
     // Navigation Methods
     public abstract Performable navigateToPageOnWeb();

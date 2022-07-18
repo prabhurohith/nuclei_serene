@@ -50,5 +50,7 @@ public class LoginPageSteps {
         heEntersUserNameAsUsername(theActor, TheCast.getActorInfo().getUsername());
         heEntersThePasswordAsPassword(theActor, TheCast.getActorInfo().getPassword());
         heClicksOnLogin(theActor);
+//        theActor.attemptsTo(NavigateTo.navigateToThePage(AppPages.HOME_PAGE.getPage()));
+
     }
 }

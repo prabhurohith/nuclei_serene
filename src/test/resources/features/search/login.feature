@@ -21,13 +21,19 @@ Feature: Login Swag Labs
     Examples:
       | user | error_msg                            |
       | Jack | "Epic sadface: Password is required" |
-#      | Jill | "Epic sadface: Sorry, this user has been locked out." |
-#      | Bob  | "Epic sadface: Sorry, this user has been locked out." |
+      | Jill | "Epic sadface: Sorry, this user has been locked out." |
+      | Bob  | "Epic sadface: Sorry, this user has been locked out." |
 
 #  @current
   Scenario: Check if the login page is displayed when user navigates to login
     Given Jack goes to the saucelabs 'login' page
     Then he should be able to see that the 'login' page is loaded
+
+  @current
+  Scenario: Check if the user is navigated to home page after successful login
+    Given Marley logs into the saucelabs app
+    And he goes to the saucelabs 'home' page
+    Then he should be able to see that the 'home' page is loaded
 
 
 

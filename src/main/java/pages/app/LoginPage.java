@@ -40,6 +40,7 @@ public class LoginPage extends BasePage {
     public Performable navigateToPageOnWeb() {
         return Task.where("{0} opens the Swag Labs Home Page",
                 Open.browserOn().the(LoginPage.class));
+        
     }
 
     @Override

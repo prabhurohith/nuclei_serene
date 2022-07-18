@@ -7,29 +7,25 @@ import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Open;
 import net.thucydides.core.annotations.DefaultUrl;
+import net.thucydides.core.pages.PageFactory;
 import pages.base.BasePage;
 
 import java.util.List;
 
-@DefaultUrl("page:login.page")
+@DefaultUrl("page:home.page")
 public class HomePage extends BasePage {
 
-    @FindBy(id = "user-name")
+    @FindBy(className = "header_secondary_container")
     @AndroidBy(id = "notDefined")
-    public static WebElementFacade USERNAME_INPUT;
+    public static WebElementFacade PRODUCTS_HEADER;
 
-    @FindBy(id = "password")
+    @FindBy(className = "peek")
     @AndroidBy(id = "notDefined")
-    public static WebElementFacade PWD_INPUT;
+    public static WebElementFacade PEEK_PRODUCT_LOGO;
 
-    @FindBy(id = "login-button")
+    @FindBy(className = "right_component")
     @AndroidBy(id = "notDefined")
-    public static WebElementFacade LOGIN_BTN;
-
-    @FindBy(xpath = "//h3[@data-test='error']")
-    @AndroidBy(id = "notDefined")
-    public static WebElementFacade ERROR_MSG;
-
+    public static WebElementFacade SORT_FILTER;
 
     @Override
     public Performable navigateToPageOnWeb() {
@@ -44,7 +40,7 @@ public class HomePage extends BasePage {
 
     @Override
     public BasePage registerPageElements() {
-        super.pageElements.addAll(List.of(USERNAME_INPUT,PWD_INPUT,LOGIN_BTN,ERROR_MSG));
+        super.pageElements.addAll(List.of(PRODUCTS_HEADER,PEEK_PRODUCT_LOGO,SORT_FILTER));
         return this;
     }
 }
