@@ -24,11 +24,13 @@ public abstract class BasePage extends PageObject {
     public  abstract BasePage registerPageElements();
 
     //Perform the assertion
-    public void checkIfThePageIsLoaded() {
+    public void checkIfThePageIsDisplayed() {
         if (pageElements.isEmpty()) {
             throw new IllegalArgumentException("The page elements are not initialised");
         } else
             OnStage.theActorInTheSpotlight().should(PageConsequences.checkIfThePageIsLoaded(pageElements));
     }
+
+    public abstract void checkIfThePageIsLoaded();
 
 }

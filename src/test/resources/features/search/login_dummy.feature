@@ -16,7 +16,7 @@ Feature: Login Swag Labs Dummy
 
   Scenario: Check if the login page is displayed when user navigates to login
     Given Jack goes to the saucelabs 'login' page
-    Then he should be able to see that the 'login' page is loaded
+    Then he should be able to see that the 'login' page is complete displayed
 
 
 

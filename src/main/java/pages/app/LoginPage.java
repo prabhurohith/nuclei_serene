@@ -53,4 +53,9 @@ public class LoginPage extends BasePage {
         super.pageElements.addAll(List.of(USERNAME_INPUT, PWD_INPUT, LOGIN_BTN));
         return this;
     }
+
+    @Override
+    public void checkIfThePageIsLoaded() {
+        throw new IllegalArgumentException("Page load condtion not defined");
+    }
 }

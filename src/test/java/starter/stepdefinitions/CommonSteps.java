@@ -16,11 +16,11 @@ public class CommonSteps {
                 .orElseThrow(() -> new IllegalArgumentException("Page not defined in the page"))));
     }
 
-    @Then("{actor} should be able to see that the {string} page is loaded")
+    @Then("{actor} should be able to see that the {string} page is complete displayed")
     public void heShouldBeAbleToSeeThatThePageIsLoaded(Actor theActor, String pageName) {
         PageInfo.getDesiredPage(pageName).answeredBy(theActor)
                 .orElseThrow(() -> new IllegalArgumentException("Page not defined in the page"))
                 .registerPageElements()
-                .checkIfThePageIsLoaded();
+                .checkIfThePageIsDisplayed();
     }
 }

@@ -43,4 +43,9 @@ public class HomePage extends BasePage {
         super.pageElements.addAll(List.of(PRODUCTS_HEADER,PEEK_PRODUCT_LOGO,SORT_FILTER));
         return this;
     }
+
+    @Override
+    public void checkIfThePageIsLoaded() {
+        throw new IllegalArgumentException("Page load condtion not defined");
+    }
 }

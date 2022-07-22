@@ -4,6 +4,7 @@ import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.screenplay.Consequence;
 import net.serenitybdd.screenplay.Question;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,7 +15,8 @@ public class PageConsequences {
 
     public static List<Consequence<?>> checkIfThePageIsLoaded(List<WebElementFacade> allPageTargets) {
         List<Consequence<?>> elementLoadConsequences = new ArrayList<Consequence<?>>();
-        allPageTargets.forEach(indTarget -> elementLoadConsequences.add(seeThat(Question.about("The target Visibility").answeredBy(actor -> indTarget), isCurrentlyVisible())));
+        allPageTargets.forEach(indTarget -> elementLoadConsequences.add(seeThat(Question.about("The target Visibility")
+                .answeredBy(actor -> indTarget.withTimeoutOf(Duration.ofSeconds(5))), isCurrentlyVisible())));
         return elementLoadConsequences;
     }
 }

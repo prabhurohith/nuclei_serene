@@ -14,6 +14,7 @@
         <serenity.version>3.2.4</serenity.version>
         <encoding>UTF-8</encoding>
 <!--        <parallel.tests>4</parallel.tests>-->
+        <webdriver.base.urll>https://www.saucedemo.com</webdriver.base.urll>
     </properties>
     <dependencies>
         <dependency>

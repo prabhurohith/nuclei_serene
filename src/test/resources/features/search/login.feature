@@ -27,13 +27,13 @@ Feature: Login Swag Labs
 #  @current
   Scenario: Check if the login page is displayed when user navigates to login
     Given Jack goes to the saucelabs 'login' page
-    Then he should be able to see that the 'login' page is loaded
+    Then he should be able to see that the 'login' page is complete displayed
 
   @current
   Scenario: Check if the user is navigated to home page after successful login
     Given Marley logs into the saucelabs app
     And he goes to the saucelabs 'home' page
-    Then he should be able to see that the 'home' page is loaded
+    Then he should be able to see that the 'home' page is complete displayed
 
 
 

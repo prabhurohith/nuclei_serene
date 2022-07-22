@@ -46,11 +46,8 @@ public class LoginPageSteps {
     @Given("{actor} logs into the saucelabs app")
     public void alexLogsIntoTheSaucelabsApp(Actor theActor) {
         theActor.attemptsTo(NavigateTo.navigateToThePage(AppPages.LOGIN_PAGE.getPage()));
-        // See if this can be fethed directly from actor using overide
         heEntersUserNameAsUsername(theActor, TheCast.getActorInfo().getUsername());
         heEntersThePasswordAsPassword(theActor, TheCast.getActorInfo().getPassword());
         heClicksOnLogin(theActor);
-//        theActor.attemptsTo(NavigateTo.navigateToThePage(AppPages.HOME_PAGE.getPage()));
-
     }
 }
