@@ -1,6 +1,8 @@
 package pages.components;
 
 import io.appium.java_client.pagefactory.AndroidBy;
+import lombok.Builder;
+import lombok.Getter;
 import net.serenitybdd.core.Serenity;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.PageObject;
@@ -13,6 +15,7 @@ import net.serenitybdd.screenplay.actions.OpenPageFromClass;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.thucydides.core.pages.PageFactory;
 import net.thucydides.core.webdriver.DefaultPageObjectInitialiser;
+import org.openqa.selenium.devtools.v85.page.Page;
 
 import java.time.Duration;
 import java.util.List;
@@ -20,7 +23,9 @@ import java.util.List;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isCurrentlyVisible;
 
-public class TopNavigation {
+@Builder
+@Getter
+public class TopNavigation extends PageObject  {
 
     @FindBy(id = "react-burger-menu-btn")
     @AndroidBy(id = "notDefined")
@@ -34,13 +39,13 @@ public class TopNavigation {
     @AndroidBy(id = "notDefined")
     public static WebElementFacade SHOPPING_CART;
 
-    public static List<Consequence<?>> getComponentElements() {
-       return List.of(seeThat(Question.about("Visibility of "+LEFT_MENU_BTN)
-               .answeredBy(actor -> LEFT_MENU_BTN.withTimeoutOf(Duration.ofSeconds(5))), isCurrentlyVisible()),
-               seeThat(Question.about("Visibility of "+APP_LOGO)
-                       .answeredBy(actor -> APP_LOGO.withTimeoutOf(Duration.ofSeconds(5))), isCurrentlyVisible()),
-               seeThat(Question.about("Visibility of "+SHOPPING_CART)
-                       .answeredBy(actor -> SHOPPING_CART.withTimeoutOf(Duration.ofSeconds(5))), isCurrentlyVisible())
-               );
+    public void configureTheComponent() {
+        new PageFactory(Serenity.getDriver()).createPageOfType(TopNavigation.class);
     }
+
+    public static List<WebElementFacade> getComponentElements() {
+        return List.of(LEFT_MENU_BTN, APP_LOGO, SHOPPING_CART);
+    }
+
+
 }

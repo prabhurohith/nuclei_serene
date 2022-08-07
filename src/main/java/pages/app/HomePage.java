@@ -9,9 +9,11 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.thucydides.core.annotations.DefaultUrl;
 import pages.base.BasePage;
+import pages.components.TopNavigation;
 
 import java.util.List;
 
+import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getPages;
 import static pages.components.TopNavigation.*;
 
 @DefaultUrl("page:home.page")
@@ -53,6 +55,6 @@ public class HomePage extends BasePage implements HasTopNavigation {
 
     @Override
     public void registerTheTopNavigation() {
-        OnStage.theActorInTheSpotlight().should(getComponentElements());
+        super.pageElements.addAll(getComponentElements());
     }
 }

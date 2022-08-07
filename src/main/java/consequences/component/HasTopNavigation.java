@@ -17,7 +17,8 @@ public interface HasTopNavigation {
 
     public void registerTheTopNavigation();
 
-    default List<Consequence<?>> getComponentElements() {
+    default List<WebElementFacade> getComponentElements() {
+        TopNavigation.builder().build().configureTheComponent();
         return TopNavigation.getComponentElements();
     }
 
