@@ -55,6 +55,7 @@ public class HomePage extends BasePage implements HasTopNavigation {
 
     @Override
     public void registerTheTopNavigation() {
+        TopNavigation.builder().build().configureTheComponent();
         super.pageElements.addAll(getComponentElements());
     }
 }

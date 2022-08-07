@@ -21,6 +21,6 @@ public class PageConsequences {
     }
 
     public static Consequence<?> checkIfElementIsDisplayed(WebElementFacade targetElement) {
-        return seeThat(Question.about("Visibility of " + targetElement).answeredBy(actor -> targetElement.withTimeoutOf(Duration.ofSeconds(5))), isCurrentlyVisible());
+        return seeThat(Question.about("Visibility of " + targetElement).answeredBy(actor -> targetElement.withTimeoutOf(Duration.ofSeconds(10))), isCurrentlyVisible());
     }
 }
