@@ -13,10 +13,14 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isCurr
 
 public class PageConsequences {
 
-    public static List<Consequence<?>> checkIfThePageIsLoaded(List<WebElementFacade> allPageTargets) {
+    public static List<Consequence<?>> checkIfThePageIsDisplayed(List<WebElementFacade> allPageTargets) {
         List<Consequence<?>> elementLoadConsequences = new ArrayList<Consequence<?>>();
-        allPageTargets.forEach(indTarget -> elementLoadConsequences.add(seeThat(Question.about("The target Visibility")
+        allPageTargets.forEach(indTarget -> elementLoadConsequences.add(seeThat(Question.about("The Visibility of " + indTarget)
                 .answeredBy(actor -> indTarget.withTimeoutOf(Duration.ofSeconds(5))), isCurrentlyVisible())));
         return elementLoadConsequences;
+    }
+
+    public static Consequence<?> checkIfElementIsDisplayed(WebElementFacade targetElement) {
+        return seeThat(Question.about("Visibility of " + targetElement).answeredBy(actor -> targetElement.withTimeoutOf(Duration.ofSeconds(5))), isCurrentlyVisible());
     }
 }

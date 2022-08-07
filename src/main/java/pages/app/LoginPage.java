@@ -3,6 +3,7 @@ package pages.app;
 import io.appium.java_client.pagefactory.AndroidBy;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.WebElementFacade;
+import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Open;
@@ -37,14 +38,12 @@ public class LoginPage extends BasePage {
 
 
     @Override
-    public Performable navigateToPageOnWeb() {
-        return Task.where("{0} opens the Swag Labs Home Page",
-                Open.browserOn().the(LoginPage.class));
-        
+    public void navigateToPageOnWeb(Actor theActor) {
+        theActor.attemptsTo(Open.browserOn().the(LoginPage.class));
     }
 
     @Override
-    public Performable navigateToPageOnDevice() {
+    public void navigateToPageOnDevice(Actor theActor) {
         throw new IllegalArgumentException("Navigation not implemented");
     }
 

@@ -17,7 +17,7 @@ public class CommonSteps {
     }
 
     @Then("{actor} should be able to see that the {string} page is complete displayed")
-    public void heShouldBeAbleToSeeThatThePageIsLoaded(Actor theActor, String pageName) {
+    public void heShouldBeAbleToSeeThatThePageIsDisplayed(Actor theActor, String pageName) {
         PageInfo.getDesiredPage(pageName).answeredBy(theActor)
                 .orElseThrow(() -> new IllegalArgumentException("Page not defined in the page"))
                 .registerPageElements()

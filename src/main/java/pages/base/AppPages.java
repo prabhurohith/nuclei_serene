@@ -14,7 +14,7 @@ import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getPages;
 @RequiredArgsConstructor
 public enum AppPages {
 
-    LOGIN_PAGE(getPages().getPage(LoginPage.class), Constants.HOME_PAGE),
+    LOGIN_PAGE(getPages().getPage(LoginPage.class), Constants.LOGIN_PAGE),
     HOME_PAGE(getPages().getPage(HomePage.class), Constants.HOME_PAGE);
 
     @Getter
