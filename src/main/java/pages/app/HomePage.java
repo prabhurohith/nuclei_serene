@@ -13,9 +13,6 @@ import pages.components.TopNavigation;
 
 import java.util.List;
 
-import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getPages;
-import static pages.components.TopNavigation.*;
-
 @DefaultUrl("page:home.page")
 public class HomePage extends BasePage implements HasTopNavigation {
 
@@ -33,7 +30,7 @@ public class HomePage extends BasePage implements HasTopNavigation {
 
     @Override
     public void navigateToPageOnWeb(Actor theActor) {
-        theActor.should(PageConsequences.checkIfElementIsDisplayed(PRODUCTS_HEADER));
+        throw new IllegalArgumentException("Navigation not implemented");
     }
 
     @Override
@@ -50,7 +47,7 @@ public class HomePage extends BasePage implements HasTopNavigation {
 
     @Override
     public void checkIfThePageIsLoaded() {
-        throw new IllegalArgumentException("Page load condition not defined");
+        OnStage.theActorInTheSpotlight().should(PageConsequences.checkIfElementIsDisplayed(PRODUCTS_HEADER));
     }
 
     @Override

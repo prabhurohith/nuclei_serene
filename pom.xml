@@ -13,7 +13,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <serenity.version>3.2.4</serenity.version>
         <encoding>UTF-8</encoding>
-<!--        <parallel.tests>4</parallel.tests>-->
         <webdriver.base.urll>https://www.saucedemo.com</webdriver.base.urll>
     </properties>
     <dependencies>
@@ -35,6 +34,16 @@
         <dependency>
             <groupId>net.serenity-bdd</groupId>
             <artifactId>serenity-ensure</artifactId>
+            <version>${serenity.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>net.serenity-bdd</groupId>
+            <artifactId>serenity-single-page-report</artifactId>
+            <version>${serenity.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>net.serenity-bdd</groupId>
+            <artifactId>serenity-navigator-report</artifactId>
             <version>${serenity.version}</version>
         </dependency>
         <dependency>
@@ -84,12 +93,13 @@
                         <include>**/When*.java</include>
                     </includes>
                     <systemPropertyVariables>
+                        <!--suppress UnresolvedMavenProperty -->
                         <webdriver.base.url>${webdriver.base.url}</webdriver.base.url>
                     </systemPropertyVariables>
-<!--                    <parallel>methods</parallel>-->
-<!--                    <useUnlimitedThreads>true</useUnlimitedThreads>-->
-<!--                    <threadCount>${parallel.tests}</threadCount>-->
-<!--                    <forkCount>${parallel.tests}</forkCount>-->
+                    <!--                    <parallel>methods</parallel>-->
+                    <!--                    <useUnlimitedThreads>true</useUnlimitedThreads>-->
+                    <!--                    <threadCount>${parallel.tests}</threadCount>-->
+                    <!--                    <forkCount>${parallel.tests}</forkCount>-->
                 </configuration>
                 <executions>
                     <execution>
@@ -115,6 +125,7 @@
                 <version>${serenity.version}</version>
                 <configuration>
                     <tags>${tags}</tags>
+                    <reports>single-page-html,navigator</reports>
                 </configuration>
                 <executions>
                     <execution>

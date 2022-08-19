@@ -1,5 +1,6 @@
 package starter.stepdefinitions;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import lombok.SneakyThrows;
@@ -23,4 +24,13 @@ public class CommonSteps {
                 .registerPageElements()
                 .checkIfThePageIsDisplayed();
     }
+
+    @Then("{actor} should be able to see that the {string} page is loaded")
+    public void heShouldBeAbleToSeeThatThePageIsLoaded(Actor theActor, String pageName) {
+        PageInfo.getDesiredPage(pageName).answeredBy(theActor)
+                .orElseThrow(() -> new IllegalArgumentException("Page not defined in the page"))
+                .registerPageElements()
+                .checkIfThePageIsLoaded();
+    }
+
 }
