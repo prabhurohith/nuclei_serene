@@ -16,23 +16,23 @@ import java.util.List;
 public class LeftNavigationPage extends PageObject implements IsComponent{
 
     @FindBy(id = "inventory_sidebar_link")
-    @AndroidBy(id = "notDefined")
+    @AndroidBy(accessibility = "test-ALL ITEMS")
     public static WebElementFacade ALL_ITEMS;
 
     @FindBy(id = "about_sidebar_link")
-    @AndroidBy(id = "notDefined")
+    @AndroidBy(uiAutomator = "new UiSelector().text(\"ABOUT\")")
     public static WebElementFacade ABOUT;
 
     @FindBy(id = "logout_sidebar_link")
-    @AndroidBy(id = "notDefined")
+    @AndroidBy(accessibility = "test-LOGOUT")
     public static WebElementFacade LOGOUT;
 
     @FindBy(id = "reset_sidebar_link")
-    @AndroidBy(id = "notDefined")
+    @AndroidBy(accessibility = "test-RESET APP STATE")
     public static WebElementFacade RESET_APP;
 
     @FindBy(id = "react-burger-cross-btn")
-    @AndroidBy(id = "notDefined")
+    @AndroidBy(accessibility = "test-Close")
     public static WebElementFacade CLOSE_BTN;
 
 

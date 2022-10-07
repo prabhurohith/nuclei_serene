@@ -1,40 +1,43 @@
 package pages.components;
 
-import io.appium.java_client.pagefactory.AndroidBy;
+import io.appium.java_client.AppiumBy;
 import lombok.Builder;
 import lombok.Getter;
 import net.serenitybdd.core.Serenity;
-import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.PageObject;
-import net.serenitybdd.core.pages.WebElementFacade;
-import net.serenitybdd.screenplay.Actor;
-import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.targets.Target;
 import net.thucydides.core.pages.PageFactory;
+import org.openqa.selenium.By;
+import target.CustomTarget;
 
 import java.util.List;
 
 @Builder
 @Getter
-public class TopNavigation extends PageObject  implements IsComponent{
+public class TopNavigation extends PageObject implements IsComponent {
 
-    @FindBy(id = "react-burger-menu-btn")
-    @AndroidBy(id = "notDefined")
-    public static WebElementFacade LEFT_MENU_BTN;
 
-    @FindBy(className = "app_logo")
-    @AndroidBy(id = "notDefined")
-    public static WebElementFacade APP_LOGO;
+    public static Target LEFT_MENU_BTN = new CustomTarget().namedAs("TargetName")
+            .locatedOnWebBy(By.id("react-burger-menu-btn"))
+            .locatedOnAndroidBy(AppiumBy.accessibilityId("test-Menu"))
+            .locatedOnIOSBy(AppiumBy.id("test-Username"));
 
-    @FindBy(id = "shopping_cart_container")
-    @AndroidBy(id = "notDefined")
-    public static WebElementFacade SHOPPING_CART;
+    public static Target APP_LOGO = new CustomTarget().namedAs("TargetName")
+            .locatedOnWebBy(By.id("app_logo"))
+            .locatedOnAndroidBy(AppiumBy.accessibilityId("test-Cart"))
+            .locatedOnIOSBy(AppiumBy.id("test-Username"));
+
+    public static Target SHOPPING_CART = new CustomTarget().namedAs("TargetName")
+            .locatedOnWebBy(By.id("shopping_cart_container"))
+            .locatedOnAndroidBy(AppiumBy.accessibilityId("test-Cart"))
+            .locatedOnIOSBy(AppiumBy.id("test-Username"));
 
     public void configureTheComponent() {
         new PageFactory(Serenity.getDriver()).createPageOfType(TopNavigation.class);
     }
 
 
-    public static List<WebElementFacade> getComponentElements() {
+    public static List<Target> getComponentElements() {
         return List.of(LEFT_MENU_BTN, APP_LOGO, SHOPPING_CART);
     }
 
