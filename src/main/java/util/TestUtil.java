@@ -3,6 +3,9 @@ package util;
 import lombok.AllArgsConstructor;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class TestUtil {
 
 
@@ -183,7 +186,48 @@ public class TestUtil {
             allNos.add(prevNo);
         }
         System.out.println(allNos);*/
+        /**
+         * Write a Java program to find out whether the given String is Palindrome or not.
+         */
+        // Split string into 2 remove/ignore the extra char if no is odd
+        // convert all to upper or lower case
+        // Get the ascii of char and compute for both strings
+        // if str1==str2 the palindrom or not
 
+
+       /* String desiredString = "n$tg$n";
+
+        //Split +ignore
+        String firstPart = desiredString.substring(0, Math.floorDiv(desiredString.length(), 2));
+        String secondPart;
+        if (desiredString.length() % 2 == 0) {
+            secondPart = desiredString.substring(Math.floorDiv(desiredString.length(), 2));
+        } else {
+            secondPart = desiredString.substring(Math.floorDiv(desiredString.length() + 1, 2));
+        }
+        List<String> splitValues = new ArrayList<>(List.of(firstPart, secondPart));
+        List<Integer> allValues = new ArrayList<>();
+
+        for (int splitIndex = 0; splitIndex < 2; splitIndex++) {
+            int asciiValue = 0;
+            for (int cntVal = 0; cntVal < firstPart.length(); cntVal++) {
+                asciiValue += splitValues.get(splitIndex).charAt(cntVal);
+            }
+            allValues.add(asciiValue);
+        }
+
+        System.out.println(allValues);
+        if (allValues.get(0).equals(allValues.get(1))) {
+            System.out.println("Its a palindrome");
+        } else {
+            System.out.println("its not");
+        }
+
+        //We can use str buffer + reverse as well here
+        System.out.println(new StringBuffer(firstPart).toString());
+        System.out.println(new StringBuffer(secondPart).reverse().toString());
+        boolean isPalindrome = new StringBuffer(firstPart).toString().equalsIgnoreCase(new StringBuffer(secondPart).reverse().toString());
+        System.out.println(isPalindrome);*/
 
     }
 }
