@@ -16,5 +16,10 @@ public class Constants {
 
     //mvn clean verify -Denvironment=firefox_web -Dwebdriver.base.url=https://www.saucedemo.com
 
+    public enum ExecutionType {
+        MOBILE,
+        WEB;
+    }
+
 
 }

@@ -2,31 +2,37 @@ package pages.app;
 
 import consequences.PageConsequences;
 import consequences.component.HasTopNavigation;
-import io.appium.java_client.pagefactory.AndroidBy;
-import net.serenitybdd.core.annotations.findby.FindBy;
-import net.serenitybdd.core.pages.WebElementFacade;
+import io.appium.java_client.AppiumBy;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.actors.OnStage;
+import net.serenitybdd.screenplay.targets.Target;
 import net.thucydides.core.annotations.DefaultUrl;
+import org.openqa.selenium.By;
 import pages.base.BasePage;
 import pages.components.TopNavigation;
+import target.CustomTarget;
 
 import java.util.List;
 
 @DefaultUrl("page:home.page")
 public class HomePage extends BasePage implements HasTopNavigation {
 
-    @FindBy(className = "header_secondary_container")
-    @AndroidBy(id = "notDefined")
-    public static WebElementFacade PRODUCTS_HEADER;
 
-    @FindBy(className = "peek")
-    @AndroidBy(id = "notDefined")
-    public static WebElementFacade PEEK_PRODUCT_LOGO;
+    public static Target PRODUCTS_HEADER = new CustomTarget().namedAs("TargetName")
+            .locatedOnWebBy(By.className("header_secondary_container"))
+            .locatedOnAndroidBy(AppiumBy.xpath("//android.view.ViewGroup[@content-desc='test-Cart drop zone']/android.view.ViewGroup/android.widget.TextView"))
+            .locatedOnIOSBy(AppiumBy.id("test-Username"));
 
-    @FindBy(className = "right_component")
-    @AndroidBy(id = "notDefined")
-    public static WebElementFacade SORT_FILTER;
+    public static Target PEEK_PRODUCT_LOGO = new CustomTarget().namedAs("TargetName")
+            .locatedOnWebBy(By.className("peek"))
+            .locatedOnAndroidBy(AppiumBy.xpath("//android.view.ViewGroup[@content-desc='test-Cart drop zone']/android.view.ViewGroup/android.widget.TextView"))
+            .locatedOnIOSBy(AppiumBy.id("test-Username"));
+
+    public static Target SORT_FILTER = new CustomTarget().namedAs("TargetName")
+            .locatedOnWebBy(By.className("right_component"))
+            .locatedOnAndroidBy(AppiumBy.xpath("test-Modal Selector Button"))
+            .locatedOnIOSBy(AppiumBy.id("test-Username"));
+
 
     @Override
     public void navigateToPageOnWeb(Actor theActor) {
