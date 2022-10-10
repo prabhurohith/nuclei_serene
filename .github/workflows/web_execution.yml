@@ -26,7 +26,7 @@ jobs:
         run: mvn clean verify -Denvironment=chrome_web -DappEnvName=qa -Dwebdriver.base.url=https://www.saucedemo.com
       - name: Uploading test Results
         if: always()
-      - uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v3
         with:
           name: target/site
           path: path/to/artifact/
