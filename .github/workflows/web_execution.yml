@@ -4,10 +4,20 @@
 name: Java CI with Maven
 
 on:
-  push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
+  workflow_dispatch:
+    inputs:
+      run_environment:
+        description: 'The device or browser platform on which the test runs'
+        required: true
+        default: 'chrome_web'
+      app_environment:
+        description: 'The app environment on which to run tests'
+        required: true
+        default: 'qa'
+      app_url:
+        description: 'The web URL'
+        required: true
+        default: 'https://www.saucedemo.com'
 
 jobs:
   build:
@@ -22,11 +32,9 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
           cache: maven
-      - name: Run Web Tests
-        run: mvn clean verify -Denvironment=chrome_web -DappEnvName=qa -Dwebdriver.base.url=https://www.saucedemo.com
-      - name: Uploading test Results
-        if: always()
-        uses: actions/upload-artifact@v3
+      - name: Build with Maven
+        run: mvn clean verify -Denvironment=${{ github.event.inputs.run_environment }} -DappEnvName=${{ github.event.inputs.app_environment }} -Dwebdriver.base.url=${{ github.event.inputs.app_url }}
+      - uses: actions/upload-artifact@v3
         with:
-          name: test-results
-          path: target/site
+          name: target/site
+          path: path/to/artifact/
