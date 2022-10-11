@@ -34,10 +34,9 @@ jobs:
   distributed_run:
 
     runs-on: ubuntu-latest
-    example_matrix:
-      strategy:
-        matrix:
-          feature: [ 'src/test/resources/features/home', 'src/test/resources/features/login' ]
+    strategy:
+      matrix:
+        feature: [ 'src/test/resources/features/home', 'src/test/resources/features/login' ]
     steps:
       - uses: actions/checkout@v3
       - name: Set up JDK 11
