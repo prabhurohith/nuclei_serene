@@ -30,10 +30,14 @@ on:
         default: 'https://www.saucedemo.com'
 
 jobs:
-  build:
+
+  distributed_run:
 
     runs-on: ubuntu-latest
-
+    example_matrix:
+      strategy:
+        matrix:
+          feature: [ 'src/test/resources/features/home', 'src/test/resources/features/login' ]
     steps:
       - uses: actions/checkout@v3
       - name: Set up JDK 11
@@ -43,7 +47,7 @@ jobs:
           distribution: 'temurin'
           cache: maven
       - name: Build with Maven
-        run: mvn clean verify -Denvironment=${{ github.event.inputs.run_environment }} -DappEnvName=${{ github.event.inputs.app_environment }} -Dwebdriver.base.url=${{ github.event.inputs.app_url }}
+        run: mvn clean verify -Denvironment=${{ github.event.inputs.run_environment }} -DappEnvName=${{ github.event.inputs.app_environment }} -Dwebdriver.base.url=${{ github.event.inputs.app_url }} -Dcucumber.features=${{ matrix.feature }}
       - name: Upload Test results
         if: always()
         uses: actions/upload-artifact@v3
