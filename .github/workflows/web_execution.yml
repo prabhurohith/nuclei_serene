@@ -9,11 +9,21 @@ on:
       run_environment:
         description: 'The device or browser platform on which the test runs'
         required: true
+        type: choice
+        options:
+          - 'chrome_web'
+          - 'firefox_web'
+          - 'android_device'
         default: 'chrome_web'
       app_environment:
         description: 'The app environment on which to run tests'
         required: true
         default: 'qa'
+        type: choice
+        options:
+          - 'qa'
+          - 'dev'
+          - 'prod'
       app_url:
         description: 'The web URL'
         required: true
@@ -34,7 +44,9 @@ jobs:
           cache: maven
       - name: Build with Maven
         run: mvn clean verify -Denvironment=${{ github.event.inputs.run_environment }} -DappEnvName=${{ github.event.inputs.app_environment }} -Dwebdriver.base.url=${{ github.event.inputs.app_url }}
-      - uses: actions/upload-artifact@v3
+      - name: Upload Test results
+        if: always()
+        uses: actions/upload-artifact@v3
         with:
           name: target/site
           path: path/to/artifact/
