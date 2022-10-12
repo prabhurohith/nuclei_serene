@@ -231,7 +231,7 @@ public class TestUtil {
          * Write a Java program to find out whether the given String is Palindrome or not.
          */
 
-        String initialVal = "Nitin";
+/*        String initialVal = "Nitin";
         String reversedVal = new String();
 
         for (int cntVal = initialVal.length() - 1; cntVal >= 0; cntVal--) {
@@ -240,6 +240,37 @@ public class TestUtil {
 
         System.out.println(reversedVal);
         boolean isPalindrome = initialVal.equalsIgnoreCase(reversedVal) ? true : false;
-        System.out.println(isPalindrome);
+        System.out.println(isPalindrome);*/
+
+        /**
+         * Write a Java program to implement a Binary Search Algorithm.
+         * Input: arr[] = {10, 20, 30, 50, 60, 80, 110, 130, 140, 170}, x = 110
+         * Output: 6
+         * Explanation: Element x is present at index 6.
+         */
+        // Sort the array in asceding
+
+        //Split the array into 2
+        //compare the last element of first array with target no
+        //if it exists in first one then return that sub array else the 2nd one
+        // Iterate over the desired array and then
+
+
+    }
+
+    public static Integer[] sortArray(Integer[] allNos) {
+
+        for (int loopCnt = 0; loopCnt < allNos.length - 1; loopCnt++) {
+            //5,4,2,1,3
+            for (int cntVal = 0; cntVal < allNos.length - 1; cntVal++) {
+                if (allNos[cntVal] > allNos[cntVal + 1]) {
+                    int initialNo = allNos[cntVal + 1];
+                    allNos[cntVal + 1] = allNos[cntVal];
+                    allNos[cntVal] = initialNo;
+                }
+            }
+        }
+
+        return allNos;
     }
 }
