@@ -27,7 +27,7 @@ on:
       publish_results:
         description: 'The app environment on which to run tests'
         required: true
-        default: 'qa'
+        default: false
         type: boolean
 
 
