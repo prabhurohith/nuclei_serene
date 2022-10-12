@@ -3,9 +3,6 @@ package util;
 import lombok.AllArgsConstructor;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class TestUtil {
 
 
@@ -191,11 +188,12 @@ public class TestUtil {
          */
         // Split string into 2 remove/ignore the extra char if no is odd
         // convert all to upper or lower case
-        // Get the ascii of char and compute for both strings
+        // reverse the 2nd string
         // if str1==str2 the palindrom or not
 
 
-       /* String desiredString = "n$tg$n";
+/*
+        String desiredString = "nitni";
 
         //Split +ignore
         String firstPart = desiredString.substring(0, Math.floorDiv(desiredString.length(), 2));
@@ -205,29 +203,43 @@ public class TestUtil {
         } else {
             secondPart = desiredString.substring(Math.floorDiv(desiredString.length() + 1, 2));
         }
-        List<String> splitValues = new ArrayList<>(List.of(firstPart, secondPart));
-        List<Integer> allValues = new ArrayList<>();
+        //Reverse the second string
 
-        for (int splitIndex = 0; splitIndex < 2; splitIndex++) {
-            int asciiValue = 0;
-            for (int cntVal = 0; cntVal < firstPart.length(); cntVal++) {
-                asciiValue += splitValues.get(splitIndex).charAt(cntVal);
-            }
-            allValues.add(asciiValue);
+        String reversedString = new String();
+        for (int cntVal = secondPart.length() - 1; cntVal >= 0; cntVal--) {
+            reversedString += "" + secondPart.charAt(cntVal);
         }
-
-        System.out.println(allValues);
-        if (allValues.get(0).equals(allValues.get(1))) {
+        secondPart = reversedString;
+        if (firstPart.equalsIgnoreCase(secondPart)) {
             System.out.println("Its a palindrome");
         } else {
             System.out.println("its not");
         }
+*/
+
 
         //We can use str buffer + reverse as well here
-        System.out.println(new StringBuffer(firstPart).toString());
+/*        System.out.println(new StringBuffer(firstPart).toString());
         System.out.println(new StringBuffer(secondPart).reverse().toString());
         boolean isPalindrome = new StringBuffer(firstPart).toString().equalsIgnoreCase(new StringBuffer(secondPart).reverse().toString());
         System.out.println(isPalindrome);*/
 
+        /**
+         * Write a Java Program to reverse the letters present in the given String.
+         */
+        /**
+         * Write a Java program to find out whether the given String is Palindrome or not.
+         */
+
+        String initialVal = "Nitin";
+        String reversedVal = new String();
+
+        for (int cntVal = initialVal.length() - 1; cntVal >= 0; cntVal--) {
+            reversedVal += initialVal.charAt(cntVal);
+        }
+
+        System.out.println(reversedVal);
+        boolean isPalindrome = initialVal.equalsIgnoreCase(reversedVal) ? true : false;
+        System.out.println(isPalindrome);
     }
 }
