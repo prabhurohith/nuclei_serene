@@ -25,7 +25,7 @@ on:
           - 'dev'
           - 'prod'
       publish_results:
-        description: 'The app environment on which to run tests'
+        description: 'Do you want to publish results'
         required: true
         default: false
         type: boolean
