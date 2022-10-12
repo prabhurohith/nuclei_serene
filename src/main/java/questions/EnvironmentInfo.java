@@ -21,6 +21,8 @@ public class EnvironmentInfo {
             case "firefox_web":
                 return Constants.ExecutionType.WEB;
             case "android_device":
+            case "android_farm_device":
+            case "ios_farm_device":
             case "ios_device":
                 return Constants.ExecutionType.MOBILE;
             default:
