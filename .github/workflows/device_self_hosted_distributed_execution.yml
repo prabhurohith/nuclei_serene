@@ -47,7 +47,7 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
           cache: maven
-      - name: Build with Maven
+      - name: Run Tests
         continue-on-error: true
         run: mvn clean verify -Denvironment=${{ github.event.inputs.run_environment }} -DappEnvName=${{ github.event.inputs.app_environment }} -Dcucumber.features=src/test/resources/features/${{ matrix.feature }}
       - name: Upload Test results
@@ -57,5 +57,5 @@ jobs:
           name: test-results ${{ matrix.feature }}
           path: |
             target/site/serenity/serenity-summary.html
-            target/site/serenity/index.html
+#            target/site/serenity/index.html
 
