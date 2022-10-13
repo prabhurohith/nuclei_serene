@@ -50,7 +50,8 @@ jobs:
       - name: Build with Maven
         run: mvn clean verify -Denvironment=${{ github.event.inputs.run_environment }} -DappEnvName=${{ github.event.inputs.app_environment }} -Dcucumber.features=${{ matrix.feature }}
       - name: Upload Test results
-        if: ${{ github.event.inputs.publish_results }}
+        if: always()
+        #        if: ${{ github.event.inputs.publish_results }}
         uses: actions/upload-artifact@v3
         with:
           name: test-results
