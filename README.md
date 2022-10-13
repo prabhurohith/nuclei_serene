@@ -174,6 +174,7 @@ To run the sample project, you can either just run the `CucumberTestSuite` test 
 By default, the tests will run using Chrome. You can run them in different browsers by selecting the appropriate profile from config file
 
 **Device**
+
 For device we have used Appium and Appium Device Farm plugin.
 Appium 2.0 is used as that helps us to integrate with Device Farm Plugin.
 
@@ -233,4 +234,9 @@ $ mvn clean verify -Denvironment=chrome_web -DappEnvName=qa -Dwebdriver.base.url
 We can achieve distributed with help of github actions and can be seen in workflow files
 
 ## Resources
-For more information about Serenity BDD, you can read the [**Serenity BDD Book**](https://serenity-bdd.github.io/theserenitybook/latest/index.html), the official online Serenity documentation source. Other sources include:  
+- For more information about Serenity BDD, you can read the [**Serenity
+  BDD Book**](https://serenity-bdd.github.io/theserenitybook/latest/index.html), the official online Serenity documentation source. Other sources
+  include:
+
+- For more info on configuring the device farm [**Appium Device
+  Farm**](https://github.com/AppiumTestDistribution/appium-device-farm)
