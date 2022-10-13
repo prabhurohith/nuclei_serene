@@ -233,4 +233,9 @@ $ mvn clean verify -Denvironment=chrome_web -DappEnvName=qa -Dwebdriver.base.url
 We can achieve distributed with help of github actions and can be seen in workflow files
 
 ## Resources
-For more information about Serenity BDD, you can read the [**Serenity BDD Book**](https://serenity-bdd.github.io/theserenitybook/latest/index.html), the official online Serenity documentation source. Other sources include:  
+- For more information about Serenity BDD, you can read the [**Serenity
+  BDD Book**](https://serenity-bdd.github.io/theserenitybook/latest/index.html), the official online Serenity documentation source. Other sources
+  include:
+
+- For more info on configuring the device farm [**Appium Device
+  Farm**](https://github.com/AppiumTestDistribution/appium-device-farm)
