@@ -174,6 +174,7 @@ To run the sample project, you can either just run the `CucumberTestSuite` test 
 By default, the tests will run using Chrome. You can run them in different browsers by selecting the appropriate profile from config file
 
 **Device**
+
 For device we have used Appium and Appium Device Farm plugin.
 Appium 2.0 is used as that helps us to integrate with Device Farm Plugin.
 
