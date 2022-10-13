@@ -48,9 +48,9 @@ jobs:
           distribution: 'temurin'
           cache: maven
       - name: Build with Maven
+        continue-on-error: true
         run: mvn clean verify -Denvironment=${{ github.event.inputs.run_environment }} -DappEnvName=${{ github.event.inputs.app_environment }} -Dcucumber.features=src/test/resources/features/${{ matrix.feature }}
       - name: Upload Test results
-        if: always()
         #        if: ${{ github.event.inputs.publish_results }}
         uses: actions/upload-artifact@v3
         with:
