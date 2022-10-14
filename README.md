@@ -7,25 +7,27 @@ Serenity strongly encourages good test automation design, and supports several d
 
 ## Nuclei Serene
 
-The best place to start with Serenity and Cucumber is to clone or download the starter project on Github ([https://github.com/serenity-bdd/serenity-cucumber-starter](https://github.com/serenity-bdd/serenity-cucumber-starter)). This project gives you a basic project setup, along with some sample tests and supporting classes. There are two versions to choose from. The master branch uses a more classic approach, using action classes and lightweight page objects, whereas the **[screenplay](https://github.com/serenity-bdd/serenity-cucumber-starter/tree/screenplay)** branch shows the same sample test implemented using Screenplay.
+The best place to start with Serenity and Cucumber is to clone or download the starter project on [Github](https://github.com/serenity-bdd/serenity-cucumber-starter).This project gives you a basic project setup, along with some sample tests and supporting classes.
 
 ### The project directory structure
-The project has build scripts for both Maven and Gradle, and follows the standard directory structure used in most Serenity projects:  
-src
+
+The project has build scripts for both Maven and Gradle, and follows the standard directory structure used in most Serenity projects:
+
+    src
 
       + main
-        + java                        
+        + java
           + cast                      Serenity Utils (Cast,Target,Consequences,Questions)
           + consequences              The assertions which needs to be done
-          + questions                 The questions which the actor might require while running tests 
+          + questions                 The questions which the actor might require while running tests
           + target                    Used Custom Targets for App and Web
           + pages                     App Pages (Pages used in App)
-            + base                    Contains the Base Page which all other app pages inherit 
-            + app 
+            + base                    Contains the Base Page which all other app pages inherit
+            + app
             + components              Commonly used views in app are kept here
           + model                     POJO for custom classes e.g ActorInfo
                                       App Utils (Navigation Handler, Data Handler)
-                                      
+
       + test
         + java                        Test runners and supporting code
           + stepdefinitions           Contains Hooks to Set and Close Stage for the test run (Actor init and tear down)
