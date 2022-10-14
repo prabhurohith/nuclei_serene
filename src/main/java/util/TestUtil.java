@@ -254,6 +254,79 @@ public class TestUtil {
         //compare the last element of first array with target no
         //if it exists in first one then return that sub array else the 2nd one
         // Iterate over the desired array and then
+        /**
+         * 1. Word reversal “Dog bites man” should output as “man bites Dog.”
+         */
+
+        /**
+         * Using Str
+         */
+
+/*        String givenString = "Dog bites man";
+        String tokenVal = " ";
+        // Tokenize with space
+        String[] tokenisedString = givenString.split(tokenVal);
+        // Append to string starting with last index
+//        StringBuffer reversedString = new StringBuffer();
+        StringJoiner reversedString = new StringJoiner(tokenVal);
+        System.out.println(tokenisedString.length);
+        for (int cntVal = tokenisedString.length - 1; cntVal >= 0; cntVal--) {
+//            reversedString.append(tokenisedString[cntVal] + tokenVal);
+            reversedString.add(tokenisedString[cntVal]);
+        }
+        // Display the output
+        System.out.println(" The reversed one " + reversedString);*/
+
+        /**
+         * Sort a Hashmap by its value
+         */
+
+        //Take all values from map
+        // Sort in order
+        // Iterate ove map and add elements matching the sorted value list
+
+/*
+        Map<String, Integer> allValues = new HashMap<>();
+        allValues.put("Alok", 34);
+        allValues.put("Bal", 24);
+        allValues.put("Charu", 44);
+
+        Map<String, Integer> allValuesSorted = new LinkedHashMap<>();
+
+        List<Integer> valuesSorted = allValues.values().stream().sorted().collect(Collectors.toList());
+        Collections.reverse(valuesSorted);
+        System.out.println(valuesSorted);
+
+        for (Integer indNo : valuesSorted) {
+            for (Map.Entry<String, Integer> indMap : allValues.entrySet()) {
+                if (indMap.getValue() == indNo) {
+                    allValuesSorted.putIfAbsent(indMap.getKey(), indMap.getValue());
+                }
+            }
+        }
+        System.out.println(allValues);
+        System.out.println(allValuesSorted);
+*/
+
+        /**
+         * 5. Pangrams Create a pangram checker that returns a Boolean TRUE if an input string is a pangram and FALSE if it isn’t.
+         * A pangram is a sentence that contains all 26 letters of the English alphabet.
+         */
+
+
+/*        String initialStr = "The uick brown fox jumps over the lazy dog".replaceAll(" ", "").toLowerCase();
+        String allChars = "abcdefghijklmnopqrstuvwxyz";
+        boolean pangramCheck = false;
+
+        for (int cntVal = 0; cntVal < initialStr.length(); cntVal++) {
+            pangramCheck = initialStr.contains("" + allChars.charAt(cntVal));
+            if (!pangramCheck) {
+                System.out.println("The missing one is ");
+                System.out.println("" + initialStr.charAt(cntVal));
+                break;
+            }
+        }
+        System.out.println("The string is a pangram " + pangramCheck);*/
 
 
     }
