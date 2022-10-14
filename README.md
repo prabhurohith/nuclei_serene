@@ -243,20 +243,34 @@ We can achieve distributed with help of github actions and can be seen in workfl
 
 ## Commands
 
-mvn clean verify -Denvironment=chrome_web -DappEnvName=qa -Dwebdriver.base.url=https://www.saucedemo.com -Dcucumber.features=src/test/resources/features/search/login.feature
-mvn clean verify -Denvironment=chrome_web -DappEnvName=qa -Dwebdriver.base.url=https://www.saucedemo.com -Dcucumber.features=src/test/resources/features/login
+**Web**
+
+    mvn clean verify -Denvironment=chrome_web -DappEnvName=qa -Dwebdriver.base.url=https://www.saucedemo.com -Dcucumber.features=src/test/resources/features/search/login.feature
+
+    mvn clean verify -Denvironment=chrome_web -DappEnvName=qa -Dwebdriver.base.url=https://www.saucedemo.com -Dcucumber.features=src/test/resources/features/login  
 
 
--- Device --
-mvn clean verify -Denvironment=android_device -DappEnvName=qa -Dcucumber.features=src/test/resources/features/login/login.feature
-mvn clean verify -Denvironment=android_farm_device -DappEnvName=qa -Dcucumber.features=src/test/resources/features/login/login.feature
+
+**Device**
+
+*Local Run*
+
+    mvn clean verify -Denvironment=android_device -DappEnvName=qa -Dcucumber.features=src/test/resources/features/login/login.feature 
 
 
-appium server -ka 800 --plugins=images -pa /wd/hub
-appium server -ka 800 -pa /wd/hub
 
-appium server -ka 800 --use-plugins=device-farm,appium-dashboard  -pa /wd/hub --plugin-device-farm-platform=android
+*On Device Farm*
 
-http://localhost:4723/device-farm/
+    mvn clean verify -Denvironment=android_farm_device -DappEnvName=qa -Dcucumber.features=src/test/resources/features/login/login.feature  
 
+**Start Appium Server**
+
+
+     appium server -ka 800 --use-plugins=device-farm,appium-dashboard  -pa /wd/hub --plugin-device-farm-platform=android 
+
+http://localhost:4723/device-farm/  
 https://github.com/AppiumTestDistribution/appium-device-farm
+
+
+**Self Host Github Runner**
+[https://github.com/prabhurohith/nuclei_serene/settings/actions/runners/new](https://github.com/prabhurohith/nuclei_serene/settings/actions/runners/new)
