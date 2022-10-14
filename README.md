@@ -240,3 +240,23 @@ We can achieve distributed with help of github actions and can be seen in workfl
 
 - For more info on configuring the device farm [**Appium Device
   Farm**](https://github.com/AppiumTestDistribution/appium-device-farm)
+
+## Commands
+
+mvn clean verify -Denvironment=chrome_web -DappEnvName=qa -Dwebdriver.base.url=https://www.saucedemo.com -Dcucumber.features=src/test/resources/features/search/login.feature
+mvn clean verify -Denvironment=chrome_web -DappEnvName=qa -Dwebdriver.base.url=https://www.saucedemo.com -Dcucumber.features=src/test/resources/features/login
+
+
+-- Device --
+mvn clean verify -Denvironment=android_device -DappEnvName=qa -Dcucumber.features=src/test/resources/features/login/login.feature
+mvn clean verify -Denvironment=android_farm_device -DappEnvName=qa -Dcucumber.features=src/test/resources/features/login/login.feature
+
+
+appium server -ka 800 --plugins=images -pa /wd/hub
+appium server -ka 800 -pa /wd/hub
+
+appium server -ka 800 --use-plugins=device-farm,appium-dashboard  -pa /wd/hub --plugin-device-farm-platform=android
+
+http://localhost:4723/device-farm/
+
+https://github.com/AppiumTestDistribution/appium-device-farm
