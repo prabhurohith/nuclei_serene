@@ -30,7 +30,37 @@ public class HomePage extends BasePage implements HasTopNavigation {
 
     public static Target SORT_FILTER = new CustomTarget().namedAs("TargetName")
             .locatedOnWebBy(By.className("right_component"))
-            .locatedOnAndroidBy(AppiumBy.xpath("test-Modal Selector Button"))
+            .locatedOnAndroidBy(AppiumBy.accessibilityId("test-Modal Selector Button"))
+            .locatedOnIOSBy(AppiumBy.id("test-Username"));
+
+    public static Target ASCENDING_NAME_SORT = new CustomTarget().namedAs("TargetName")
+            .locatedOnWebBy(By.className("right_component"))
+            .locatedOnAndroidBy(AppiumBy.androidUIAutomator("new UiSelector().textContains(\"NAME (A to Z)\")"))
+            .locatedOnIOSBy(AppiumBy.id("test-Username"));
+
+    public static Target DESCENDING_NAME_SORT = new CustomTarget().namedAs("TargetName")
+            .locatedOnWebBy(By.className("right_component"))
+            .locatedOnAndroidBy(AppiumBy.androidUIAutomator("new UiSelector().textContains(\"NAME (Z to A)\")"))
+            .locatedOnIOSBy(AppiumBy.id("test-Username"));
+
+    public static Target PRICE_FROM_LOW_SORT = new CustomTarget().namedAs("TargetName")
+            .locatedOnWebBy(By.className("right_component"))
+            .locatedOnAndroidBy(AppiumBy.androidUIAutomator("new UiSelector().textContains(\"Price (low to high)\")"))
+            .locatedOnIOSBy(AppiumBy.id("test-Username"));
+
+    public static Target PRICE_FROM_HIGH_SORT = new CustomTarget().namedAs("TargetName")
+            .locatedOnWebBy(By.className("right_component"))
+            .locatedOnAndroidBy(AppiumBy.androidUIAutomator("new UiSelector().textContains(\"Price (high to low)\")"))
+            .locatedOnIOSBy(AppiumBy.id("test-Username"));
+
+    public static Target CANCEL_BTN = new CustomTarget().namedAs("TargetName")
+            .locatedOnWebBy(By.className("right_component"))
+            .locatedOnAndroidBy(AppiumBy.androidUIAutomator("new UiSelector().textContains(\"Cancel\")"))
+            .locatedOnIOSBy(AppiumBy.id("test-Username"));
+
+    public static Target PRODUCT_TITLE = new CustomTarget().namedAs("TargetName")
+            .locatedOnWebBy(By.className("right_component"))
+            .locatedOnAndroidBy(AppiumBy.xpath("//android.widget.TextView[@content-desc='test-Item title']"))
             .locatedOnIOSBy(AppiumBy.id("test-Username"));
 
 

@@ -13,6 +13,7 @@ Feature: Login Feature
       | "locked_out_user" | "secret_sauce" | "Epic sadface: Sorry, this user has been locked out." |
       | "problem_user"    | "secret_sauce" | "Epic sadface: Sorry, this user has been locked out." |
 
+#    Try using the data table for above
 
   Scenario: Check if the login page is displayed when user navigates to login
     Given Jack goes to the saucelabs 'login' page
