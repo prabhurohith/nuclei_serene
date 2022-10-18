@@ -361,6 +361,31 @@ public class TestUtil {
         for (int indVal : initialNo) {
             System.out.println(indVal);
         }*/
+
+        /**
+         * Check for Armstrongs Number
+         * Input : 153
+         * Output : Yes
+         * 153 is an Armstrong number.
+         * 1*1*1 + 5*5*5 + 3*3*3 = 153
+         */
+
+        // Calculate the power of each nos  (Math.pow)
+        // Store the power
+        // Finally add and check if equal to i/p no
+
+
+/*        int inputNo = 153;
+        int sumToCheck = 0;
+
+        for (int cntVal = 0; cntVal < ("" + inputNo).length(); cntVal++) {
+            sumToCheck += Math.pow(Double.parseDouble("" + ("" + inputNo).charAt(cntVal)), 3);
+        }
+        System.out.println(sumToCheck);
+        boolean armStronNo = sumToCheck == inputNo ? true : false;
+        System.out.println("Its a armstrong no ---- " + armStronNo);*/
+
+
     }
 
     public static Integer[] sortArray(Integer[] allNos) {
