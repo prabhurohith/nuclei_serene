@@ -30,7 +30,7 @@ on:
         default: false
         type: boolean
       install_java:
-        description: 'Use the runner Java'
+        description: 'Install Java on Runner'
         required: true
         default: false
         type: boolean
@@ -47,7 +47,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Set up JDK 11
-        if: ${{ github.event.inputs.install_java == 'true'}}
+        #        if: ${{ github.event.inputs.install_java == 'true'}}
         uses: actions/setup-java@v3
         with:
           java-version: '11'
@@ -57,7 +57,7 @@ jobs:
         continue-on-error: true
         run: mvn clean verify -Denvironment=${{ github.event.inputs.run_environment }} -DappEnvName=${{ github.event.inputs.app_environment }} -Dcucumber.features=src/test/resources/features/${{ matrix.feature }}
       - name: Upload Test results
-        #        if: ${{ github.event.inputs.publish_results }}
+        #        if: ${{ github.event.inputs.publish_results == 'true' }}
         uses: actions/upload-artifact@v3
         with:
           name: test-results ${{ matrix.feature }}
