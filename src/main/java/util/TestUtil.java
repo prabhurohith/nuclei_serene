@@ -327,6 +327,63 @@ public class TestUtil {
             }
         }
         System.out.println("The string is a pangram " + pangramCheck);*/
+        /**
+         * For a given input number, return the number in reverse. So, an input of 3956 should return 6593.
+         */
+
+        // Exchange the last index with first one
+        // Increment indexes and go on till the half of array is covered
+        // half of array determined by quotient + remainedr (to handle for odd)
+        // Print output
+        // Handling decimals
+/*
+        double allNos = 3.957;
+        int indexOf = ("" + allNos).indexOf(".");
+        int decimal = (int) Math.pow(10, Double.parseDouble("" + (("" + allNos).length() - indexOf - 1)));
+        System.out.println(decimal);
+        System.out.println(Double.parseDouble(new StringBuffer(("" + allNos).replaceAll("\\.", "")).reverse().toString()) / decimal);
+*/
+
+
+//        System.out.println(allNos);
+
+      /*  int[] initialNo = {3, 9, 5, 6};
+        int startCnt = 0;
+
+
+        for (int cntVal = initialNo.length - 1; cntVal >= (initialNo.length / 2) + (initialNo.length % 2); cntVal--) {
+
+            initialNo[cntVal] = initialNo[cntVal] + initialNo[startCnt];
+            initialNo[startCnt] = initialNo[cntVal] - initialNo[startCnt];
+            initialNo[cntVal] = initialNo[cntVal] - initialNo[startCnt];
+            startCnt++;
+        }
+        for (int indVal : initialNo) {
+            System.out.println(indVal);
+        }*/
+
+        /**
+         * Check for Armstrongs Number
+         * Input : 153
+         * Output : Yes
+         * 153 is an Armstrong number.
+         * 1*1*1 + 5*5*5 + 3*3*3 = 153
+         */
+
+        // Calculate the power of each nos  (Math.pow)
+        // Store the power
+        // Finally add and check if equal to i/p no
+
+
+/*        int inputNo = 153;
+        int sumToCheck = 0;
+
+        for (int cntVal = 0; cntVal < ("" + inputNo).length(); cntVal++) {
+            sumToCheck += Math.pow(Double.parseDouble("" + ("" + inputNo).charAt(cntVal)), 3);
+        }
+        System.out.println(sumToCheck);
+        boolean armStronNo = sumToCheck == inputNo ? true : false;
+        System.out.println("Its a armstrong no ---- " + armStronNo);*/
 
 
     }

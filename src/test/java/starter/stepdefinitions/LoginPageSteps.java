@@ -44,6 +44,7 @@ public class LoginPageSteps {
 
 
     @Given("{actor} logs into the saucelabs app")
+    @Given("{actor} logs into the app")
     public void alexLogsIntoTheSaucelabsApp(Actor theActor) {
         theActor.attemptsTo(NavigateTo.navigateToThePage(AppPages.LOGIN_PAGE.getPage()));
         heEntersUserNameAsUsername(theActor, TheCast.getActorInfo().getUsername());

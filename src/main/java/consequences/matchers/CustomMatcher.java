@@ -1,6 +1,8 @@
 package consequences.matchers;
 
 import net.serenitybdd.core.pages.WebElementState;
+import net.serenitybdd.screenplay.Question;
+import net.serenitybdd.screenplay.targets.Target;
 import org.hamcrest.Description;
 import org.hamcrest.TypeSafeMatcher;
 import questions.EnvironmentInfo;
@@ -41,7 +43,7 @@ public class CustomMatcher {
         public void describeTo(Description description) {
             description.appendText("an element containing '").appendText(expectedText).appendText("'");
         }
-
-
     }
+
+
 }
