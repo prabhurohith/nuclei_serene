@@ -1,7 +1,7 @@
-Feature: Home Landing Feature
+Feature: Sort results on home page
 
   @current
-  Scenario Outline: Check if the user is navigated to home page after successful login
+  Scenario Outline: User is able to sort the search results on home page
     Given Marley logs into the app
     Then he should be able to see that the 'home' page is loaded
     When he sorts the results by <sort_category> in <sort_type>
