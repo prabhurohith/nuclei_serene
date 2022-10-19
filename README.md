@@ -5,6 +5,8 @@ Serenity BDD is a library that makes it easier to write high quality automated a
 
 Serenity strongly encourages good test automation design, and supports several design patterns, including classic Page Objects, the newer Lean Page Objects/ Action Classes approach, and the more sophisticated and flexible Screenplay pattern.
 
+![Screenplay Pattern](./src/main/java/starter/screenplay-model.svg)
+
 ## Nuclei Serene
 
 The best place to start with Serenity and Cucumber is to clone or download the starter project on [Github](https://github.com/serenity-bdd/serenity-cucumber-starter).This project gives you a basic project setup, along with some sample tests and supporting classes.
@@ -179,6 +181,9 @@ By default, the tests will run using Chrome. You can run them in different brows
 
 For device we have used Appium and Appium Device Farm plugin.
 Appium 2.0 is used as that helps us to integrate with Device Farm Plugin.
+
+![Screenplay Pattern](./src/main/java/starter/1a.jpg)
+
 
 **Appium Device Farm**
 -   Automatically detects connected Android, iOS Simulators and Real devices before session creation and maintains it in device pool.
