@@ -1,6 +1,8 @@
 
 # Getting started with Serenity and Cucumber
 
+![alt text](screenplay-model.svg)
+
 Serenity BDD is a library that makes it easier to write high quality automated acceptance tests, with powerful reporting and living documentation features. It has strong support for both web testing with Selenium, and API testing using RestAssured.
 
 Serenity strongly encourages good test automation design, and supports several design patterns, including classic Page Objects, the newer Lean Page Objects/ Action Classes approach, and the more sophisticated and flexible Screenplay pattern.
@@ -174,8 +176,12 @@ To run the sample project, you can either just run the `CucumberTestSuite` test 
 By default, the tests will run using Chrome. You can run them in different browsers by selecting the appropriate profile from config file
 
 **Device**
+
 For device we have used Appium and Appium Device Farm plugin.
 Appium 2.0 is used as that helps us to integrate with Device Farm Plugin.
+
+
+![alt text](1a.jpg)
 
 **Appium Device Farm**
 -   Automatically detects connected Android, iOS Simulators and Real devices before session creation and maintains it in device pool.
