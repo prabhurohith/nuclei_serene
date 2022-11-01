@@ -10,6 +10,8 @@ public class Constants {
     //Page Constants
     public static String LOGIN_PAGE = "login";
     public static String HOME_PAGE = "home";
+    public static String DRAWING_PAGE = "drawing";
+
 
     //App Constants
     public static String LEFT_NAVIGATION_OPENED = "is_left_nav_open";

@@ -2,6 +2,7 @@ package pages.base;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+import pages.app.DrawingPage;
 import pages.app.HomePage;
 import pages.app.LoginPage;
 import util.data.Constants;
@@ -15,7 +16,9 @@ import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getPages;
 public enum AppPages {
 
     LOGIN_PAGE(getPages().getPage(LoginPage.class), Constants.LOGIN_PAGE),
-    HOME_PAGE(getPages().getPage(HomePage.class), Constants.HOME_PAGE);
+    HOME_PAGE(getPages().getPage(HomePage.class), Constants.HOME_PAGE),
+    DRAWING_PAGE(getPages().getPage(DrawingPage.class), Constants.DRAWING_PAGE);
+
 
     @Getter
     private final BasePage page;
@@ -23,6 +26,6 @@ public enum AppPages {
     private final String pageName;
 
     public static List<AppPages> getAllPages() {
-        return new ArrayList<AppPages>(List.of(LOGIN_PAGE, HOME_PAGE));
+        return new ArrayList<AppPages>(List.of(LOGIN_PAGE, HOME_PAGE,DRAWING_PAGE));
     }
 }
