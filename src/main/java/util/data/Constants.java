@@ -12,6 +12,9 @@ public class Constants {
     public static String HOME_PAGE = "home";
     public static String DRAWING_PAGE = "drawing";
 
+    public static String LEFT_NAVIGATION_PAGE = "left navigation";
+
+
 
     //App Constants
     public static String LEFT_NAVIGATION_OPENED = "is_left_nav_open";

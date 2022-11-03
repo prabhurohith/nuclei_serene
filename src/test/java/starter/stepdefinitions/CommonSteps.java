@@ -33,4 +33,12 @@ public class CommonSteps {
                 .checkIfThePageIsLoaded();
     }
 
+    @Then("{actor} should see that the {string} options are displayed")
+    public void heShouldBeAbleToSeeThatTheComponentIsDisplayed(Actor theActor, String pageName) {
+        PageInfo.getDesiredPage(pageName).answeredBy(theActor)
+                .orElseThrow(() -> new IllegalArgumentException("Page not defined in the page"))
+                .registerPageElements()
+                .checkIfThePageIsDisplayed();
+    }
+
 }

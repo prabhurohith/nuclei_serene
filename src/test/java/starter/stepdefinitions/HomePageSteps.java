@@ -7,9 +7,11 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.ensure.Ensure;
 import pages.app.HomePage;
+import pages.base.AppPages;
 import pages.components.LeftNavigationPage;
 import pages.components.TopNavigation;
 import questions.PageInfo;
+import tasks.navigation.NavigateTo;
 import util.data.Constants;
 
 import java.util.Collections;
@@ -19,9 +21,7 @@ import java.util.stream.Collectors;
 public class HomePageSteps {
     @And("{actor} opens the left navigation")
     public void heOpensTheLeftNavigation(Actor theActor) {
-        theActor.attemptsTo(Click.on(TopNavigation.LEFT_MENU_BTN));
-        theActor.remember(Constants.LEFT_NAVIGATION_OPENED, true);
-        LeftNavigationPage.builder().build().configureTheComponent();
+        theActor.attemptsTo(NavigateTo.navigateToThePage(AppPages.LEFT_NAVIGATION_PAGE.getPage()));
     }
 
 

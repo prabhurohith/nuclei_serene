@@ -1,6 +1,5 @@
 Feature: Sort results on home page
 
-  @current
   Scenario Outline: User is able to sort the search results on home page
     Given Marley logs into the app
     Then he should be able to see that the 'home' page is loaded

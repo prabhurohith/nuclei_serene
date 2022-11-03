@@ -1,5 +1,6 @@
 Feature: Drawing Feature
 
+  @wip
   Scenario: Verify the left navigation options
     Given Marley logs into the saucelabs app
     Then he should be able to see that the 'home' page is loaded
