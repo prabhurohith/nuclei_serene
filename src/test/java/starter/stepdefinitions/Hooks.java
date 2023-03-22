@@ -11,7 +11,8 @@ public class Hooks {
 
     @BeforeAll
     public static void setupReporting() {
-        configureReporting();
+        //This is for report prtal
+//        configureReporting();
     }
 
     @Before
@@ -21,6 +22,10 @@ public class Hooks {
 //            OnStage.theActorInTheSpotlight().abilityTo(BrowseTheWeb.class);
 
         } else if (EnvironmentInfo.getRunProfile().toLowerCase().contains("device")) {
+            OnStage.setTheStage(new OnlineCast());
+        }
+        else
+        {
             OnStage.setTheStage(new OnlineCast());
         }
     }
