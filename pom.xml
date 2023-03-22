@@ -71,6 +71,12 @@
             <artifactId>assertj-core</artifactId>
             <version>3.6.2</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/com.github.invictum/serenity-reportportal-integration -->
+        <dependency>
+            <groupId>com.github.invictum</groupId>
+            <artifactId>serenity-reportportal-integration</artifactId>
+            <version>1.5.7</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
