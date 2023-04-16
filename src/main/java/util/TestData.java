@@ -2,7 +2,7 @@ package util;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import model.data.ActorInfo;
+import model.data.user.ActorInfo;
 
 import java.io.File;
 import java.io.IOException;

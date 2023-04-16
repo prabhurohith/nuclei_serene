@@ -3,8 +3,10 @@ package util.data;
 public class Constants {
 
     public static String ACTOR_INFO = "actor_info";
+    public static String PET_INFO = "pet_info";
     public static String RUN_PROFILE = "environment"; // Gets the run profile selected web , mobile web set using .conf files
     public static String RUN_ENVIRONMENT = "appEnvName"; // Gets the run profile selected web , mobile web set using .conf files
+    public static String API_BASE_URL = "restapi.baseurl"; // Gets the run profile selected web , mobile web set using .conf files
 
 
     //Page Constants
@@ -23,7 +25,8 @@ public class Constants {
 
     public enum ExecutionType {
         MOBILE,
-        WEB;
+        WEB,
+        API;
     }
 
 

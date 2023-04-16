@@ -14,6 +14,10 @@ public class EnvironmentInfo {
         return System.getProperty(Constants.RUN_ENVIRONMENT);
     }
 
+    public static String getBaseApiUrl() {
+        return System.getProperty(Constants.API_BASE_URL);
+    }
+
     // Gets the type of platform execution
 
     public static Constants.ExecutionType getExecutionType() {
@@ -26,6 +30,8 @@ public class EnvironmentInfo {
             case "ios_farm_device":
             case "ios_device":
                 return Constants.ExecutionType.MOBILE;
+            case "API":
+                return Constants.ExecutionType.API;
             default:
                 throw new IllegalArgumentException("Please select a valid env");
 
