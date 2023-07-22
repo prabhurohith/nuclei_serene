@@ -1,6 +1,8 @@
 package questions;
 
 import net.serenitybdd.screenplay.Question;
+import net.thucydides.core.environment.SystemEnvironmentVariables;
+import net.thucydides.core.util.EnvironmentVariables;
 import util.data.Constants;
 
 public class EnvironmentInfo {
@@ -42,5 +44,10 @@ public class EnvironmentInfo {
     {
         return Question.about("The Execution Type").answeredBy(actor -> getExecutionType().name());
     }
-
+    //This is to take a property from serenity config
+    public static Boolean isLoggingEnabled() {
+        EnvironmentVariables variables = SystemEnvironmentVariables.createEnvironmentVariables();
+        variables.getProperty(Constants.ENABLE_LOGGING);
+        return Boolean.valueOf(variables.getProperty(Constants.ENABLE_LOGGING));
+    }
 }

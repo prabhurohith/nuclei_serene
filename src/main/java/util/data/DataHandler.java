@@ -3,7 +3,7 @@ package util.data;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import model.data.user.ActorInfo;
-import model.data.api.response.GetPetResponse;
+import model.api.response.GetPetResponse;
 
 import java.io.File;
 import java.io.IOException;

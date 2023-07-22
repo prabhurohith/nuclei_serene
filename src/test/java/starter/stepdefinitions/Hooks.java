@@ -5,6 +5,7 @@ import com.github.tomakehurst.wiremock.core.WireMockConfiguration;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.BeforeAll;
+import io.restassured.RestAssured;
 import net.serenitybdd.screenplay.Ability;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;

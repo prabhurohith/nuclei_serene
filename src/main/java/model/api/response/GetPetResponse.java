@@ -1,6 +1,8 @@
-package model.data.api.response;
+package model.api.response;
 
 import lombok.Getter;
+import model.api.response.common.Category;
+import model.api.response.common.Tags;
 
 import java.util.List;
 
@@ -12,17 +14,4 @@ public class GetPetResponse {
     private Category category;
     private List<Tags> tags;
     private String status;
-    @Getter
-    public static class Category {
-        private String name;
-        private Integer id;
-
-    }
-    @Getter
-    public static class Tags {
-        private String name;
-        private Integer id;
-
-    }
-
 }
