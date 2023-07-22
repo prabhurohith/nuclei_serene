@@ -1,6 +1,8 @@
 package questions;
 
 import net.serenitybdd.screenplay.Question;
+import net.thucydides.core.environment.SystemEnvironmentVariables;
+import net.thucydides.core.util.EnvironmentVariables;
 import util.data.Constants;
 
 public class EnvironmentInfo {
@@ -12,6 +14,10 @@ public class EnvironmentInfo {
 
     public static String getAppEnvironment() {
         return System.getProperty(Constants.RUN_ENVIRONMENT);
+    }
+
+    public static String getBaseApiUrl() {
+        return System.getProperty(Constants.API_BASE_URL);
     }
 
     // Gets the type of platform execution
@@ -26,6 +32,8 @@ public class EnvironmentInfo {
             case "ios_farm_device":
             case "ios_device":
                 return Constants.ExecutionType.MOBILE;
+            case "API":
+                return Constants.ExecutionType.API;
             default:
                 throw new IllegalArgumentException("Please select a valid env");
 
@@ -36,5 +44,10 @@ public class EnvironmentInfo {
     {
         return Question.about("The Execution Type").answeredBy(actor -> getExecutionType().name());
     }
-
+    //This is to take a property from serenity config
+    public static Boolean isLoggingEnabled() {
+        EnvironmentVariables variables = SystemEnvironmentVariables.createEnvironmentVariables();
+        variables.getProperty(Constants.ENABLE_LOGGING);
+        return Boolean.valueOf(variables.getProperty(Constants.ENABLE_LOGGING));
+    }
 }

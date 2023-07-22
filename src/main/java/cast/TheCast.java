@@ -1,6 +1,6 @@
 package cast;
 
-import model.data.ActorInfo;
+import model.data.user.ActorInfo;
 import net.serenitybdd.screenplay.actors.OnStage;
 import util.data.Constants;
 
