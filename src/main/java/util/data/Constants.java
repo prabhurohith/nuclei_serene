@@ -16,9 +16,9 @@ public class Constants {
     public static String LOGIN_PAGE = "login";
     public static String HOME_PAGE = "home";
     public static String DRAWING_PAGE = "drawing";
+    public static String DETAILS_PAGE = "details";
 
     public static String LEFT_NAVIGATION_PAGE = "left navigation";
-
 
 
     //App Constants

@@ -63,6 +63,14 @@ public class HomePage extends BasePage implements HasTopNavigation {
             .locatedOnAndroidBy(AppiumBy.xpath("//android.widget.TextView[@content-desc='test-Item title']"))
             .locatedOnIOSBy(AppiumBy.id("test-Username"));
 
+    public static Target PRODUCT_TILE = new CustomTarget().namedAs("Product Tile")
+            .locatedOnWebBy(By.className("right_component"))
+            .locatedOnAndroidBy(AppiumBy.xpath("//android.view.ViewGroup[@content-desc='test-Item']"))
+            .locatedOnIOSBy(AppiumBy.id("test-Username"));
+    public static Target PRODUCT_IMAGE = new CustomTarget().namedAs("Product Tile")
+            .locatedOnWebBy(By.className("right_component"))
+            .locatedOnAndroidBy(AppiumBy.xpath("//android.view.ViewGroup[@content-desc='test-Item']//android.view.ViewGroup//android.widget.ImageView"))
+            .locatedOnIOSBy(AppiumBy.id("test-Username"));
 
     @Override
     public void navigateToPageOnWeb(Actor theActor) {

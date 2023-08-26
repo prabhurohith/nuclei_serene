@@ -5,12 +5,14 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.ensure.Ensure;
 import pages.app.HomePage;
 import pages.base.AppPages;
 import pages.components.LeftNavigationPage;
 import pages.components.TopNavigation;
 import questions.PageInfo;
+import tasks.app.TapOnProduct;
 import tasks.navigation.NavigateTo;
 import util.data.Constants;
 
@@ -23,7 +25,6 @@ public class HomePageSteps {
     public void heOpensTheLeftNavigation(Actor theActor) {
         theActor.attemptsTo(NavigateTo.navigateToThePage(AppPages.LEFT_NAVIGATION_PAGE.getPage()));
     }
-
 
     @When("{actor} sorts the results by {string} in {string}")
     public void heSortsTheResultsBySort_categoryInSort_type(Actor theActor, String sortCategory, String sortType) {
@@ -70,5 +71,11 @@ public class HomePageSteps {
             default:
                 throw new IllegalArgumentException("Please select a valid sort");
         }
+    }
+
+    @And("he taps on the {string} product")
+    public void heTapsOnTheSauceLabsBackpackProduct(String prodName) {
+        OnStage.theActorInTheSpotlight().attemptsTo(TapOnProduct.browseTheProduct(prodName));
+        OnStage.theActorInTheSpotlight().attemptsTo(TapOnProduct.andTap(prodName));
     }
 }
