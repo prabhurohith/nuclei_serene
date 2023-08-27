@@ -39,10 +39,8 @@ public class Browse implements Performable {
         {
             for(WebElementFacade indElement:desiredElement.resolveAllFor(actor))
             {
-                System.out.println("Scroll cnt "+cntVal);
                 if(indElement.getText().equalsIgnoreCase(elementValue))
                 {
-                    System.out.println("Element found ");
                     actor.remember("elementForAction",indElement);
                     break ELEME_FOUND;
                 }
