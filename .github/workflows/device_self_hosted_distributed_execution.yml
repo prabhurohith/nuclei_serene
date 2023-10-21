@@ -55,7 +55,7 @@ jobs:
           cache: maven
       - name: Run Tests
         continue-on-error: true
-        run: mvn clean verify -Denvironment=${{ github.event.inputs.run_environment }} -DappEnvName=${{ github.event.inputs.app_environment }} -Dcucumber.features=src/test/resources/features/${{ matrix.feature }}
+        run: mvn clean verify -Denvironment=${{ github.event.inputs.run_environment }} -DappEnvName=${{ github.event.inputs.app_environment }} -Dcucumber.features=src/test/resources/features/app/${{ matrix.feature }}
       - name: Upload Test results
         #        if: ${{ github.event.inputs.publish_results == 'true' }}
         uses: actions/upload-artifact@v3
