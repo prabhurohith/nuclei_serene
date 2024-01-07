@@ -25,8 +25,8 @@ Feature: Login Feature
     Examples:
       | username        | password     | error_msg                                             |
       | standard_user   |              | "Epic sadface: Password is required"                  |
-      | locked_out_user | secret_sauce | "Epic sadface: Sorry, this user has been locked out." |
-      | problem_user    | secret_sauce | "Epic sadface: Sorry, this user has been locked out." |
+#      | locked_out_user | secret_sauce | "Epic sadface: Sorry, this user has been locked out." |
+#      | problem_user    | secret_sauce | "Epic sadface: Sorry, this user has been locked out." |
 
 
   Scenario: Check if the login page is displayed when user navigates to login

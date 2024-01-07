@@ -14,6 +14,6 @@ import org.junit.runner.RunWith;
 )*/
 @Suite
 @IncludeEngines("cucumber")
-@SelectClasspathResource("/features/app/")
+@SelectClasspathResource("/features/app")
 public class CucumberTestSuite {
 }
