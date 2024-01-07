@@ -16,7 +16,6 @@ Feature: Login Feature
 
   #The above feature gives explicit user inputs but user behaviour needs to to automated for BDD . hnece overcome the problem using below
 
-  @current
   Scenario Outline: Test the login with empty password with form
     Given Jack has logged into the saucelabs app with the below credentials
       | username   | password   |
@@ -31,7 +30,7 @@ Feature: Login Feature
 
 
   Scenario: Check if the login page is displayed when user navigates to login
-    Given Jack goes to the saucelabs 'login' page
+    Given Marley goes to the saucelabs 'login' page
     Then he should be able to see that the 'login' page is complete displayed
 
 
