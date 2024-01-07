@@ -1,15 +1,12 @@
 package pages.app;
 
 import io.appium.java_client.AppiumBy;
-import io.appium.java_client.pagefactory.AndroidBy;
-import net.serenitybdd.core.annotations.findby.FindBy;
-import net.serenitybdd.core.pages.WebElementFacade;
+import net.serenitybdd.annotations.DefaultUrl;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.actions.Open;
 import net.serenitybdd.screenplay.matchers.WebElementStateMatchers;
 import net.serenitybdd.screenplay.targets.Target;
 import net.serenitybdd.screenplay.waits.Wait;
-import net.thucydides.core.annotations.DefaultUrl;
 import org.openqa.selenium.By;
 import pages.base.BasePage;
 import target.CustomTarget;

@@ -1,20 +1,14 @@
 package actions;
 
-import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
 import net.serenitybdd.core.Serenity;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
-import net.serenitybdd.screenplay.targets.Target;
-import net.thucydides.core.annotations.Step;
 import net.thucydides.core.webdriver.WebDriverFacade;
 import org.openqa.selenium.remote.RemoteWebElement;
 
-import java.time.Instant;
 import java.util.Map;
-
-import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
 
 public class Scroll {
 

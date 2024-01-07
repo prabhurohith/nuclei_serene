@@ -3,13 +3,12 @@ package pages.app;
 import consequences.PageConsequences;
 import consequences.component.HasTopNavigation;
 import io.appium.java_client.AppiumBy;
+import net.serenitybdd.annotations.DefaultUrl;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.targets.Target;
-import net.thucydides.core.annotations.DefaultUrl;
 import org.openqa.selenium.By;
 import pages.base.BasePage;
-import pages.components.TopNavigation;
 import target.CustomTarget;
 
 import java.util.List;
